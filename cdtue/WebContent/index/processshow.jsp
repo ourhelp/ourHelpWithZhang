@@ -25,85 +25,48 @@
 			<img src="Images/logo.png" alt="" class="logo">
 			<!--导航-->
 			<ul class="navLink">
-	            <li><a href="main">首页</a></li>
-	            <li><a href="index/work">援藏工作</a></li>
-	            <li><a href="index/policy">援藏政策</a></li>
-	            <li><a href="index/need">援藏需求</a></li>
-	            <li><a href="index/process">援藏路径</a></li>
-	            <li><a href="index/school">援藏高校</a></li>
-	            <!-- <li><a href="index/work">工作动态</a></li> -->
-	            <li><a href="index/adver">人员招聘</a></li>
-	        </ul>
-			<!--登陆-->
-			<c:choose>
-				<c:when test="${manager == null}">
-					<a href="login.html" class="login"> <!--<span></span>-->登陆
-					</a>
-				</c:when>
-				<c:otherwise>
-				欢迎您：${manager.userName}<a href="index.jsp" class="login"> <!--<span></span>-->前往后台
-					</a>
-				</c:otherwise>
-			</c:choose>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">援藏工作</a></li>
+            <li><a href="#">援藏政策</a></li>
+            <li><a href="#">援藏需求</a></li>
+            <li><a href="#">援藏路径</a></li>
+            <li><a href="#">援藏高校</a></li>
+            <li><a href="#">工作动态</a></li>
+            <li><a href="#">人员招聘</a></li>
+        </ul>
+        <!--登陆-->
+		<a href="login.html" class="login">登陆</a>
 		</div>
 	</header>
 	<!--内容-->
 	<div id="detail">
 		<!--顶部面包屑-->
 		<div class="crumbs content">
-			<a href="index/process">援藏路线</a> <img src="Images/right.png" alt="">
-			<a href="index/toProcessShow/${process.id }">路线详情</a>
+			<a href="#">援藏路线</a> <img src="Images/right.png" alt="">
+			<a href="#">路线详情</a>
 		</div>
 		<div class="detail content">
 			<div class="detail-left">
 				<div class="detail-left-top" style="height: 100px;">
-					<h1>${process.pathName }</h1>
+					<h1>测试标题</h1>
 				</div>
 				<div class="detail-left-bottom" id="context">
-					<script type="text/javascript">
-
-	var param = '${process.context }';
-	
-	var params = param.split("|");
-	
-	for(var i = 0; i < params.length; i++){
-		var body=document.getElementById("context");
-		var childs=body.children;
-			if(childs.length!=1){
-			
-			var div2=document.createElement("div");
-			div2.setAttribute("class", "center");
-			body.appendChild(div2);
-			
-			var div3=document.createElement("div");
-			div3.setAttribute("class", "to_right");
-			body.appendChild(div3);
-			}
-			
-			var div=document.createElement("div");
-			var p=document.createElement("p");
-			
-			p.innerHTML = params[i];
-			div.setAttribute("class", "roundedRectangle");
-		    p.setAttribute("onclick","deletediv(this);");	
-			div.appendChild(p);
-			body.appendChild(div);
-	}
-	</script>
-	
+					测试内容
 				</div>
 			</div>
 			<div class="detail-right">
 				<h3>相似的项目</h3>
 				<ul>
-					<c:forEach items="${processs }" var="a">
-						<li>
-							<h5
-								style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-								<a href="index/toProcessShow/${a.id }">${a.pathName }</a>
-							</h5>
-						</li>
-					</c:forEach>
+					<li>
+						<h5 style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+							<a href="#">测试标题</a>
+						</h5>
+					</li>
+					<li>
+						<h5 style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+							<a href="#">测试标题</a>
+						</h5>
+					</li>
 				</ul>
 			</div>
 		</div>

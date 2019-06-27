@@ -69,46 +69,32 @@
 			<img src="Images/logo.png" alt="" class="logo">
 			<!--导航-->
 			<ul class="navLink">
-	            <li><a href="main">首页</a></li>
-	            <li><a href="index/work">援藏工作</a></li>
-	            <li><a href="index/policy">援藏政策</a></li>
-	            <li><a href="index/need">援藏需求</a></li>
-	            <li><a href="index/process">援藏路径</a></li>
-	            <li><a href="index/school">援藏高校</a></li>
-	            <!-- <li><a href="index/work">工作动态</a></li> -->
-	            <li><a href="index/adver">人员招聘</a></li>
-       		</ul>	
-			<!--登陆-->
-			<c:choose>
-				<c:when test="${manager == null}">
-					<a href="login.html" class="login">
-						<!--<span></span>-->登陆
-					</a>
-				</c:when>
-				<c:otherwise>
-				欢迎您：${manager.userName}<a href="index.jsp" class="login">
-						<!--<span></span>-->前往后台
-					</a>
-				</c:otherwise>
-			</c:choose>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">援藏工作</a></li>
+            <li><a href="#">援藏政策</a></li>
+            <li><a href="#">援藏需求</a></li>
+            <li><a href="#">援藏路径</a></li>
+            <li><a href="#">援藏高校</a></li>
+            <li><a href="#">工作动态</a></li>
+            <li><a href="#">人员招聘</a></li>
+        </ul>
+        <!--登陆-->
+		<a href="login.html" class="login">登陆</a>
 		</div>
 	</header>
 	<!--内容-->
 	<div id="detail">
 		<!--顶部面包屑-->
 		<div class="crumbs content">
-			<a href="index/need">援藏需求</a> <img src="Images/right.png" alt="">
-			<a href="index/toNeedShow/${need.id }">需求详情</a>
+			<a href="#">援藏需求</a> <img src="Images/right.png" alt="">
+			<a href="#">需求详情</a>
 		</div>
 		<div class="detail content">
 			<div class="detail-left">
 				<div class="detail-left-top" style="height: 195px;">
-					<h1 style="text-align: center;">${need.title }</h1>
+					<h1 style="text-align: center;">测试标题</h1>
 					<section>
 						<div class="btn" style="margin: 10px auto;" onclick="openJoin()">点击报名</div>
-
-						<!--  <a href="index/indexadd.jsp" class="btn" style="margin: 10px auto;">点击报名</a>
-                -->
 					</section>
 				</div>
 				<div class="box">
@@ -141,30 +127,29 @@
 						<tr>
 							<td class="tableleft"></td>
 							<td>
-								<button type="button" id="submit-button" class="btn btn-primary"
-									type="button">提交</button> &nbsp;&nbsp;
-								<button type="button" class="btn btn-success" name="backid"
-									id="backid">返回</button>
+								<button type="button" id="submit-button" class="btn btn-primary">提交</button> &nbsp;&nbsp;
+								<button type="button" class="btn btn-success" name="backid" id="backid">返回</button>
 							</td>
 						</tr>
 					</table>
 				</div>
 				<div class="detail-left-bottom">
-					<p>${need.context }</p>
+					<p>测试内容</p>
 				</div>
 			</div>
 			<div class="detail-right">
 				<h3>相似的项目</h3>
 				<ul>
-					<c:forEach items="${needs }" var="n">
-						<li>
-							<h5
-								style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-								<a href="index/toNeedShow/${n.id }">${n.title }</a>
-							</h5>
-							
-						</li>
-					</c:forEach>
+					<li>
+						<h5 style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+							<a href="#">测试标题</a>
+						</h5>
+					</li>
+					<li>
+						<h5 style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+							<a href="#">测试标题</a>
+						</h5>
+					</li>
 				</ul>
 			</div>
 		</div>

@@ -38,7 +38,7 @@
 
     </style>
 </head>
-<form action="need/add" method="post">
+<form action="" method="post">
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
         <td class="tableleft">标题</td>

@@ -195,5 +195,8 @@
   	select * from user where username=#{username}
   </select>
   
+  <select id="selectAll" resultType="cn.cdtu.CDTUE.pojo.User">
+  	select * from user
+  </select>
   
 </mapper>

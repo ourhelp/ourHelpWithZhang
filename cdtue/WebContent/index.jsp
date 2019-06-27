@@ -47,7 +47,7 @@
 				items:[
 					{id:'3',text:'角色管理',href:'#'},
 					{id:'4',text:'权限管理',href:'#'},
-					{id:'6',text:'管理员管理',href:'User/index.jsp'}
+					{id:'6',text:'管理员管理',href:'user/list'}
 				]
 			},
 			{text:'援藏高校',

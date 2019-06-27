@@ -44,22 +44,23 @@ body {
 </style>
 </head>
 <body>
-	<form action="" method="post" class="definewidth m20">
+	<form action="user/add" method="post" class="definewidth m20">
 		<table class="table table-bordered table-hover ">
 			<tr>
 				<td class="tableleft">管理员名称</td>
-				<td><input type="text" id="userName" name="userName"/></td>
+				<td><input type="text" id="userName" name="username"/></td>
 			</tr>
 			<tr>
 				<td class="tableleft">管理员密码</td>
-				<td><input type="text" id="passWord" name="passWord"/></td>
+				<td><input type="text" id="passWord" name="password"/></td>
 			</tr>
 			<tr>
 				<td class="tableleft">所属学校</td>
 				<td>
-					<select id="schId" name="schId">
-						<option value="1001">北京大学</option>
-						<option value="1002">清华大学</option>
+					<select id="schId" name="schoolid">
+						<c:forEach items="${schools }" var="school"> 
+							<option value="${school.id }">${school.schoolname }</option>
+						</c:forEach>
 					</select>
 				</td>
 			</tr>
@@ -69,7 +70,7 @@ body {
 			</tr>
 			<tr>
 				<td class="tableleft">级别</td>
-				<td><select id="roleId" name="roleId">
+				<td><select id="roleId" name="level">
 						<option value="1" selected="selected">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -80,7 +81,7 @@ body {
 			<tr>
 				<td class="tableleft"></td>
 				<td>
-					<button type="button" id="submit-button" class="btn btn-primary">保存</button> &nbsp;&nbsp;
+					<button type="submit" id="submit-button" class="btn btn-primary">保存</button> &nbsp;&nbsp;
 					<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
 				</td>
 			</tr>

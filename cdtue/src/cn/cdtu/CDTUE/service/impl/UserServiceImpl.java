@@ -1,10 +1,13 @@
 package cn.cdtu.CDTUE.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.cdtu.CDTUE.dao.UserMapper;
 import cn.cdtu.CDTUE.pojo.User;
+import cn.cdtu.CDTUE.service.SchoolService;
 import cn.cdtu.CDTUE.service.UserService;
 import cn.cdtu.CDTUE.util.Tools;
 
@@ -13,6 +16,10 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private UserMapper userMapper;
+	
+	@Autowired
+	private SchoolService schoolService;
+	
 	@Override
 	public String login(User user) {
 		
@@ -32,10 +39,31 @@ public class UserServiceImpl implements UserService{
 			return "password is error";
 		
 	}
+
+
 	@Override
-	public String regist(User user) {
+	public List<User> list() {
+		
+		List<User> list = userMapper.selectAll();
+		
+		return list;
+	}
+
+
+	@Override
+	public void regist(User user) {
+		
+		user.setId(Tools.getId());
+		user.setCreatetime(Tools.getTime());
+		user.setPassword(Tools.md5(user.getPassword()));
+		
+		// 根据所属学校id，查询学校名称
+		String schoolname = schoolService.selectNameById(user.getSchoolid());
+		user.setSchoolname(schoolname);
+		
+		
 		userMapper.insertSelective(user);
-		return "注册成功";
+		
 	}
 
 }

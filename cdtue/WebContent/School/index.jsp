@@ -39,7 +39,7 @@ body {
 </style>
 </head>
 <body>
-	<form class="form-inline definewidth m20" action="school/search"
+	<form class="form-inline definewidth m20" action=""
 		method="get">
 		学校名称： <input type="text" name="param" id="param"
 			class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
@@ -58,7 +58,7 @@ body {
 			</tr>
 		</thead>
 		<tr>
-			<td>${s.id }</td>
+			<td>0001</td>
 			<td style="max-width: 220px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
 				<a title="点击查看详情" href="">
 					北京大学
@@ -76,7 +76,6 @@ body {
 				|<a class="option-button" href="#">查看</a>
 			</td>
 		</tr>
-
 	</table>
 	<div class="inline pull-right page">
 		10 条记录 1/2页 

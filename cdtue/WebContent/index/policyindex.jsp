@@ -23,46 +23,17 @@
         <img src="Images/logo.png" alt="" class="logo">
         <!--导航-->
         <ul class="navLink">
-            <li>
-                <a href="main">首页</a>
-                <span></span>
-            </li>
-            <li>
-                <a href="index/work">援藏工作</a>
-                <span></span>
-            </li>
-            <li>
-                <a href="index/policy">援藏政策</a>
-                <span></span>
-            </li>
-            <li>
-                <a href="index/need">援藏需求</a>
-                <span></span>
-            </li>
-            <li>
-                <a href="index/process">援藏路径</a>
-                <span></span>
-            </li>
-            <li>
-                <a href="index/school">援藏高校</a>
-                <span></span>
-            </li>
-            <li>
-                <a href="index/adver">人员招聘</a>
-                <span></span>
-            </li>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">援藏工作</a></li>
+            <li><a href="#">援藏政策</a></li>
+            <li><a href="#">援藏需求</a></li>
+            <li><a href="#">援藏路径</a></li>
+            <li><a href="#">援藏高校</a></li>
+            <li><a href="#">工作动态</a></li>
+            <li><a href="#">人员招聘</a></li>
         </ul>
         <!--登陆-->
-        <c:choose>
-				<c:when test="${manager == null}">
-					<a href="login.html" class="login"> <!--<span></span>-->登陆
-					</a>
-				</c:when>
-				<c:otherwise>
-				欢迎您：${manager.userName}<a href="index.jsp" class="login"> <!--<span></span>-->前往后台
-					</a>
-				</c:otherwise>
-			</c:choose>
+        <a href="login.html" class="login">登陆</a>
     </div>
 </header>
 <!--内容-->
@@ -73,51 +44,23 @@
     <div class="inForBox">
         <div class="inForBox01">
             <ul class="pageMain">
-            <c:forEach items="${policys }" var="s">
                 <li>
-                    <a title="点击下载文件" href="${pageContext.request.contextPath }/index/policydownload/${s.id }">
-                        <span>${s.title }</span>
-                        <span>
-							<script type="text/javascript">
-								var time = new Date("${s.uptadeTime }");
-								var year = time.getFullYear();
-								var month = time.getMonth() + 1;
-								var day = time.getDate();
-								var hours = time.getHours() + 10;
-								if(hours >= 24){
-									hours -= 24;
-								}
-								var minute = time.getMinutes();
-								var second = time.getSeconds();
-								document.write(year + "-" + month + "-" + day + " " + hours + ":" + minute + ":" + second);
-							</script>
-						</span>
+                    <a title="点击下载文件" href="#">
+                        <span>测试标题</span>
+                        <span>2018-04-20 08:00:00</span>
                     </a>
                 </li>
-                </c:forEach>
                 
             </ul>
             <div class="pageBox">
-                <p class="len">共 <span>${total }</span>条记录</p>
-                <p class="iNum">当前第 <span>${page.page }/${page.totalPage }</span> 页</p>
+				<p class="len">共 <span>10</span>条记录</p>
+				<p class="iNum">当前第 <span>1/2</span> 页</p>
                 
-                <c:choose>
-			<c:when test="${page.page == 1 }">
-			</c:when>
-			<c:otherwise>
-				<a href='index/policy' class="first">首页</a>
-				<a href='index/policy?page= ${page.page - 1 }' class="prev">上一页</a>
-			</c:otherwise>
-		</c:choose>
-                <c:choose>
-			<c:when test="${page.page == page.totalPage }">
-			</c:when>
-			<c:otherwise>
-				<a href='index/policy?page= ${page.page + 1 }' class="next">下一页</a>
-				<a href='index/policy?page=${page.totalPage }' class="last">尾页</a>
-			</c:otherwise>
-		</c:choose>
-            </div>
+				<a href='#' class="first">首页</a>
+				<a href='#' class="prev">上一页</a>
+				<a href='#' class="next">下一页</a>
+				<a href='#' class="last">尾页</a>
+			</div>
         </div>
     </div>
 </div>

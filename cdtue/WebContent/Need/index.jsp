@@ -63,7 +63,7 @@ body {
 		<tr>
 			<td>0001</td>
 			<td style="max-width: 220px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
-				<a title="点击查看全文" href="">
+				<a title="点击查看全文" href="#">
 					测试标题
 				</a>
 			</td>
@@ -78,7 +78,6 @@ body {
 				|<a class="option-button" href="#">查看</a>
 			</td>
 		</tr>
-
 	</table>
 	<div class="inline pull-right page">
 		10 条记录 1/2页 

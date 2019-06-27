@@ -155,4 +155,16 @@
       other = #{other,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  
+  <select id="selectAll" resultType="cn.cdtu.CDTUE.pojo.School">
+  	select * from school
+  </select>
+  
+  <select id="selectNameById" parameterType="java.lang.String" resultType="java.lang.String">
+  	select schoolname from school where id=#{id}
+  </select>
+  
+  
+  
+  
 </mapper>

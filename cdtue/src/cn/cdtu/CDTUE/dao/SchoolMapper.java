@@ -1,5 +1,7 @@
 package cn.cdtu.CDTUE.dao;
 
+import java.util.List;
+
 import cn.cdtu.CDTUE.pojo.School;
 import cn.cdtu.CDTUE.pojo.SchoolWithBLOBs;
 
@@ -17,4 +19,8 @@ public interface SchoolMapper {
     int updateByPrimaryKeyWithBLOBs(SchoolWithBLOBs record);
 
     int updateByPrimaryKey(School record);
+
+	List<School> selectAll();
+
+	String selectNameById(String id);
 }

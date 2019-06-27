@@ -45,7 +45,7 @@
     用户名称：
     <input type="text" name="param" id="param" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;  
     <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
-    <button type="button" class="btn btn-success" id="addnew">新增用户</button>
+    <button type="button" class="btn btn-success" onclick="toAdd()" id="addnew">新增用户</button>
 </form>
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
@@ -56,28 +56,31 @@
         <th>电话</th>
         <th>级别</th>
         <th>创建时间</th>
-        <th>创建者</th>
+        <th>其它</th>
         <th>操作</th>
     </tr>
     </thead>
-		<tr>
-			<td>0001</td>
+    <c:forEach items="${users }" var="user">
+    	<tr>
+			<td>${user.id }</td>
 			<td>
 				<a title="点击查看详情" href="#">
-					admin
+					${user.username }
 				</a>
 			</td>
-			<td>北京大学</td>
-			<td>13800138000</td>
-			<td>超级管理员</td>
-			<td>2018-04-20 08:00:00</td>
-			<td>admin</td>
+			<td>${user.schoolname }</td>
+			<td>${user.telephone }</td>
+			<td>${user.level }</td>
+			<td>${user.createtime }</td>
+			<td>${user.other }</td>
 			<td>
 				 <a class="option-button" href="#">编辑</a>
 				|<a class="option-button" href="#">删除</a>
 				|<a class="option-button" href="#">查看</a>
 			</td>
 		</tr>
+    </c:forEach>
+		
 </table>
 	<div class="inline pull-right page">
 		10 条记录 1/2页 
@@ -89,5 +92,7 @@
 </body>
 </html>
 <script>
-   
+   var toAdd = function(){
+	   window.location.href = "user/toadd";
+   }
 </script>

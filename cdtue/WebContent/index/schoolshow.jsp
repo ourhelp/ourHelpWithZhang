@@ -23,89 +23,65 @@
 			<img src="Images/logo.png" alt="" class="logo">
 			<!--导航-->
 			<ul class="navLink">
-	            <li><a href="main">首页</a></li>
-	            <li><a href="index/work">援藏工作</a></li>
-	            <li><a href="index/policy">援藏政策</a></li>
-	            <li><a href="index/need">援藏需求</a></li>
-	            <li><a href="index/process">援藏路径</a></li>
-	            <li><a href="index/school">援藏高校</a></li>
-	            <!-- <li><a href="index/work">工作动态</a></li> -->
-	            <li><a href="index/adver">人员招聘</a></li>
-        	</ul>
-			<!--登陆-->
-			<c:choose>
-				<c:when test="${manager == null}">
-					<a href="login.html" class="login"> <!--<span></span>-->登陆
-					</a>
-				</c:when>
-				<c:otherwise>
-				欢迎您：${manager.userName}<a href="index.jsp" class="login"> <!--<span></span>-->前往后台
-					</a>
-				</c:otherwise>
-			</c:choose>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">援藏工作</a></li>
+            <li><a href="#">援藏政策</a></li>
+            <li><a href="#">援藏需求</a></li>
+            <li><a href="#">援藏路径</a></li>
+            <li><a href="#">援藏高校</a></li>
+            <li><a href="#">工作动态</a></li>
+            <li><a href="#">人员招聘</a></li>
+        </ul>
+        <!--登陆-->
+		<a href="login.html" class="login">登陆</a>
 		</div>
 	</header>
 	<!--内容-->
 	<div id="detail">
 		<!--顶部面包屑-->
 		<div class="crumbs content">
-			<a href="index/school">援藏高校</a> <img src="Images/right.png" alt="">
-			<a href="index/toSchoolShow/${school.id }">高校详情</a>
+			<a href="#">援藏高校</a> <img src="Images/right.png" alt="">
+			<a href="#">高校详情</a>
 		</div>
 		<div class="detail content">
 			<div class="detail-left">
 				<div class="detail-left-top" style="height: 100px;">
-					<h1>${school.schName }</h1>
+					<h1>北京大学</h1>
 				</div>
 				<div class="detail-left-bottom">
 					<p>
-						需要援助:
-						<c:choose>
-							<c:when test="${school.recSchool eq 1}">
-								是
-							</c:when>
-							<c:otherwise>
-								否
-							</c:otherwise>
-						</c:choose>
+						需要援助:是
 					</p>
 					<p>
-						前往援助:
-						<c:choose>
-							<c:when test="${school.isZup eq 1}">
-								是
-							</c:when>
-							<c:otherwise>
-								否
-							</c:otherwise>
-						</c:choose>
+						前往援助:否
 					</p>
 					<p>
 						详细信息:
 					</p>
 					<p>
-						${school.message }
+						测试内容
 					</p>
 					<p>
 						援藏历史:
 					</p>
 					<p>
-						${school.supHistory }
+						无
 					</p>
 				</div>
 			</div>
 			<div class="detail-right">
 				<h3>其它学校</h3>
 				<ul>
-					<c:forEach items="${schools }" var="a">
-						<li>
-							<h5
-								style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-								<a href="index/toSchoolShow/${a.id }">${a.schName }</a>
-							</h5>
-							
-						</li>
-					</c:forEach>
+					<li>
+						<h5 style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+							<a href="#">清华大学</a>
+						</h5>
+					</li>
+					<li>
+						<h5 style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+							<a href="#">四川大学</a>
+						</h5>
+					</li>
 				</ul>
 			</div>
 		</div>

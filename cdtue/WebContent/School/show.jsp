@@ -37,7 +37,7 @@
     </style>
 </head>
 <body>
-<form action="school/edit" method="post" class="definewidth m20">
+<form action="" method="post" class="definewidth m20">
 <table class="table table-bordered table-hover ">
     <tr>
         <td width="10%" class="tableleft">学校编号</td>
