@@ -63,17 +63,22 @@
 		
 		var param = "username=" + username +"&password=" + password;
 		
+		var u = {
+				'username': username,
+				'password': password
+		}
+		
 		$.ajax({
-			url: "user/login",
+			url: "user/test",
 			type: "post",
 			async: true,
-			data: param,
+			data: u,
 			success: function(res){
-				if(res == "success"){
-					window.location.href = "main.jsp";
+				 if(res == "success"){
+					window.location.href = "index";
 				} else {
 					alert(res);
-				}
+				} 
 			},
 			error: function(e){
 				alert("网络异常，请稍后再试！");

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.cdtu.CDTUE.pojo.Page;
 import cn.cdtu.CDTUE.pojo.School;
 import cn.cdtu.CDTUE.pojo.User;
 import cn.cdtu.CDTUE.service.SchoolService;
@@ -31,13 +32,20 @@ public class UserController {
 	}
 	
 	@RequestMapping("list")
-	public String list(Model model) {
+	public String list(Model model, Page page) {
 		
-		// 获取所有的用户集合
-		List<User> list = userService.list();
+		//[index=1,sum=5,totalPage=null,count=7]
+		
+		// 根据页码获取所有的用户集合
+		List<User> list = userService.list(page);
+		
+		// 查询总共的数据条数
+		Integer count = userService.selectCount();
+		
+		page.setCount(count);
 		
 		model.addAttribute("users", list);
-		
+		model.addAttribute("page", page);
 		return "../User/index";
 	}
 	
@@ -57,5 +65,10 @@ public class UserController {
 		userService.regist(user);
 		
 		return "forward:list";
+	}
+	
+	@RequestMapping("test")
+	public void test(User user) {
+		System.out.println(user);
 	}
 }

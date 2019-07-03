@@ -2,6 +2,7 @@ package cn.cdtu.CDTUE.dao;
 
 import java.util.List;
 
+import cn.cdtu.CDTUE.pojo.Page;
 import cn.cdtu.CDTUE.pojo.User;
 
 public interface UserMapper {
@@ -23,4 +24,8 @@ public interface UserMapper {
 
 	List<User> selectAll();
 
+
+	List<User> selectAllByPage(Page page);
+
+	Integer selectCount();
 }

@@ -83,11 +83,28 @@
 		
 </table>
 	<div class="inline pull-right page">
-		10 条记录 1/2页 
-		<a href='#'>首页</a>
-		<a href='#'>上一页</a>
-		<a href='#'>下一页</a>
-		<a href='#'>尾页</a>
+		${page.count }条记录 ${page.index }/${page.totalPage }页 
+		<a href='user/list'>首页</a>
+		
+		<c:choose>
+			<c:when test="${page.index == 1 }">
+				上一页
+			</c:when>
+			<c:otherwise>
+				<a href='user/list?index=${page.index - 1 }'>上一页</a>
+			</c:otherwise>
+		</c:choose>
+		
+		<c:choose>
+			<c:when test="${page.index == page.totalPage }">
+				下一页
+			</c:when>
+			<c:otherwise>
+				<a href='user/list?index=${page.index + 1 }'>下一页</a>
+			</c:otherwise>
+		</c:choose>
+		
+		<a href='user/list?index=${page.totalPage }'>尾页</a>
 	</div>
 </body>
 </html>

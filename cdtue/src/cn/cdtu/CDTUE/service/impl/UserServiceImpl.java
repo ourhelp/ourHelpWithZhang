@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.cdtu.CDTUE.dao.UserMapper;
+import cn.cdtu.CDTUE.pojo.Page;
 import cn.cdtu.CDTUE.pojo.User;
 import cn.cdtu.CDTUE.service.SchoolService;
 import cn.cdtu.CDTUE.service.UserService;
@@ -42,9 +43,9 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-	public List<User> list() {
+	public List<User> list(Page page) {
 		
-		List<User> list = userMapper.selectAll();
+		List<User> list = userMapper.selectAllByPage(page);
 		
 		return list;
 	}
@@ -64,6 +65,13 @@ public class UserServiceImpl implements UserService{
 		
 		userMapper.insertSelective(user);
 		
+	}
+
+
+	@Override
+	public Integer selectCount() {
+		Integer count = userMapper.selectCount();
+		return count;
 	}
 
 }

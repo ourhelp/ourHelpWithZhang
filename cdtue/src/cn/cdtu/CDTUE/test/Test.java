@@ -2,8 +2,6 @@ package cn.cdtu.CDTUE.test;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -31,7 +29,7 @@ public class Test {
 		SchoolWithBLOBs s = new SchoolWithBLOBs();
 		
 		s.setId("1002");
-		s.setSchoolname("ï¿½É¹ï¿½ï¿½ï¿½");
+		s.setSchoolname("³É¹¤´ó");
 		
 		sm.insertSelective(s);
 		
@@ -63,16 +61,7 @@ public class Test {
 		System.out.println(result);*/
 		
 		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println(DriverManager.getConnection("jdbc:mysql://localhost:3306/cdtue?useSSL=false&useUnicode=true&characterEncoding=utf8", "root", "677728"));
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 		
 		

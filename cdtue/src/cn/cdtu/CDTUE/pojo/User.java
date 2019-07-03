@@ -130,4 +130,13 @@ public class User {
     public void setOther(String other) {
         this.other = other == null ? null : other.trim();
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", gender=" + gender
+				+ ", level=" + level + ", telephone=" + telephone + ", qq=" + qq + ", email=" + email + ", schoolid="
+				+ schoolid + ", schoolname=" + schoolname + ", createtime=" + createtime + ", address=" + address
+				+ ", other=" + other + "]";
+	}
+    
 }

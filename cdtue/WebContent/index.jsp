@@ -52,7 +52,7 @@
 			},
 			{text:'援藏高校',
 				items:[
-					{id:'5',text:'学校管理',href:'#'},
+					{id:'5',text:'学校管理',href:'School/index.jsp'},
 					{id:'6',text:'需求管理',href:'#'}
 				]
 			},

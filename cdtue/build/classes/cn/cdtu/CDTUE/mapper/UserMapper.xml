@@ -199,4 +199,16 @@
   	select * from user
   </select>
   
+  <select id="selectAllByPage" parameterType="cn.cdtu.CDTUE.pojo.Page" resultType="cn.cdtu.CDTUE.pojo.User">
+  	select * from user limit #{start}, #{sum}
+  </select>
+  
+  <select id="selectCount" resultType="java.lang.Integer">
+  	select count(*) from user
+  </select>
+  
+  
+  
+  
+  
 </mapper>
